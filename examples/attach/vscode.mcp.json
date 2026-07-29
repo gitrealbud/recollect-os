@@ -1,0 +1,12 @@
+{
+  "servers": {
+    "recollect-os": {
+      "type": "stdio",
+      "command": "node",
+      "args": ["<mcp-entry>"],
+      "env": {
+        "RECOLLECT_ROOT": "<vault>"
+      }
+    }
+  }
+}

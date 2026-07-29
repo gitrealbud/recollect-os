@@ -1,0 +1,52 @@
+# recollect-os
+
+**File-native judgment law for human-in-the-loop agents** — local CLI + kit.
+
+Gives an AI a durable place to think with you—not a chat log to re-read, and not a black-box memory product.  
+Not the unrelated npm package `recollect` (browser DB).
+
+Repo: [recollect-os](https://github.com/gitrealbud/recollect-os).
+
+## Start (one command)
+
+```bash
+npx -y recollect-os init ~/recollect
+```
+
+```bash
+npx -y recollect-os smoke --root ~/recollect
+npx -y recollect-os status --root ~/recollect
+```
+
+Init convenience-wires **Cursor**. For Claude Desktop, VS Code, Windsurf, Zed, or any other **stdio MCP** host, paste the server block from the [repo README](https://github.com/gitrealbud/recollect-os#attach-any-mcp-capable-model) / [`mcp/README.md`](../mcp/README.md). Same vault. Same write gate. Model is interchangeable.
+
+**Windows:** if `npx` misses the bin:
+
+```bash
+npm i -g recollect-os
+recollect-os.cmd init %USERPROFILE%\recollect
+recollect-os.cmd smoke --root %USERPROFILE%\recollect
+```
+
+Rewire after upgrade: `recollect-os init --rewire` (never wipes notes).
+
+## Commands (local clone)
+
+```bash
+cd cli
+npm install
+npm run build
+
+node dist/src/index.js init [dir]
+node dist/src/index.js init [dir] --rewire
+node dist/src/index.js smoke --root [dir]
+node dist/src/index.js status --root [dir] [--intent "…"]
+```
+
+## Undo
+
+See `UNDO.md` written into the vault. Removing `.cursor/rules/recollect.mdc` and `.cursor/mcp.json` reverses Cursor wire; vault files remain. Other hosts: remove the `recollect-os` entry from that app’s MCP config.
+
+## Publish
+
+See [`docs/PUBLISH.md`](../docs/PUBLISH.md).

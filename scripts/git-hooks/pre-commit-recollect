@@ -1,0 +1,20 @@
+#!/bin/sh
+# Opt-in pre-commit: flag durable vault changes without recent accept audit.
+# Install: recollect-os doctor --root <vault> --install-hook
+# Or copy this file to .git/hooks/pre-commit and chmod +x.
+
+ROOT=$(git rev-parse --show-toplevel 2>/dev/null) || exit 0
+command -v recollect-os >/dev/null 2>&1 || command -v recollect-os.cmd >/dev/null 2>&1 || exit 0
+
+if command -v recollect-os.cmd >/dev/null 2>&1; then
+  recollect-os.cmd doctor --root "$ROOT" --git
+else
+  recollect-os doctor --root "$ROOT" --git
+fi
+status=$?
+if [ $status -ne 0 ]; then
+  echo "recollect-os: unmediated durable changes (outside the gate)." >&2
+  echo "Use propose → accept, or amend deliberately. Hook is opt-in." >&2
+  exit $status
+fi
+exit 0

@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "recollect-os": {
+      "command": "node",
+      "args": ["<mcp-entry>"],
+      "env": {
+        "RECOLLECT_ROOT": "<vault>"
+      }
+    }
+  }
+}

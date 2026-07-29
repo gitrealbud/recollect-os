@@ -1,0 +1,10 @@
+# Grok Build — paste into ~/.grok/config.toml under [[mcp_servers]] (or use: grok mcp add …)
+# Replace <mcp-entry> and <vault> with absolute paths.
+
+[[mcp_servers]]
+name = "recollect-os"
+command = "node"
+args = ["<mcp-entry>"]
+
+[mcp_servers.env]
+RECOLLECT_ROOT = "<vault>"

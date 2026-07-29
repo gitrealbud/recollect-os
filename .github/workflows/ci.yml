@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        node: [20]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Install MCP
+        working-directory: mcp
+        run: npm ci
+      - name: Test MCP
+        working-directory: mcp
+        run: npm test
+      - name: Install CLI
+        working-directory: cli
+        run: npm ci
+      - name: Test CLI
+        working-directory: cli
+        run: npm test
+      - name: Cold path (init → smoke --gate → status)
+        shell: bash
+        run: |
+          set -e
+          ROOT="${RUNNER_TEMP}/recollect-cold"
+          node cli/dist/src/index.js init "$ROOT"
+          node cli/dist/src/index.js smoke --root "$ROOT" --gate
+          node cli/dist/src/index.js status --root "$ROOT"
+          node cli/dist/src/index.js doctor --root "$ROOT"
