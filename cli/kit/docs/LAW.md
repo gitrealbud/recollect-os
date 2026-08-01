@@ -1,99 +1,58 @@
-# Current rules
+# Rules
 
-Rules for agents that work against a **file-native judgment vault**: notes on disk are the record; durable writes are reviewable; context stays small.
+This kit is small: **markdown notes on disk**, agents that **load little**, and **draft → you accept** before durable edits stick. That is the whole idea.
 
-**Living:** amend when enforcement or lived evidence changes — not to chase private process fashion.
+Filename `LAW.md` is historical. This is not a constitution and not a control plane — just rules for agents using the kit.
 
-**Two speech layers**
-
-| Layer | Where | Speech |
-|-------|--------|--------|
-| **Face / tools** | README · START · DEMO · ATTACH · MCP tool descriptions | Everyday English only |
-| **This file** | Glossary + binding rules | Formal names allowed — **one home**; do not fork meanings elsewhere |
+Change this file when tools or practice change, not to sound more formal.
 
 ---
 
-## System mass in plain English (read this before the glossary)
+## What to do (plain)
 
-Day one is three ideas. After that, five real systems — **plain first**:
+| Topic | Rule |
+|--------|------|
+| **Writes** | Draft durable change → human accepts. Safe micro-ops may proceed. Some paths tools refuse. Detail: [`WRITE-CLASSES.md`](./WRITE-CLASSES.md). |
+| **What’s current** | Personal focus · project **“what’s true now”** · **short index** (the index is not live status). Don’t keep the same live fact in two places. |
+| **This task** | Only a small open set for **this task**. Open more only when needed. Don’t browse the whole vault “just in case.” |
+| **Start of session** | Default = one small working-set load (`boot` / `pack=overlay`). Focus-only = `pulse`. Other packs are advanced. Inventory: [`../mcp/README.md`](../mcp/README.md). |
+| **Connect** | Prefer tools on the machine that holds the notes. Remote may draft; accept stays local. Mirrors are browse-only. |
 
-| # | Mass | Plain rule |
-|---|------|------------|
-| 1 | **Writes** | Draft durable change → human accepts. Safe micro-ops may proceed. Some paths tools refuse. Detail: [`WRITE-CLASSES.md`](./WRITE-CLASSES.md). |
-| 2 | **Live surfaces** | **Personal focus** · project **“what’s true now”** · **short index** (never live). Same live fact must not have two writers. |
-| 3 | **Working set** | Hot material for **this task only**. Compose or load it first; expand only when the task names more. Do not ambient-browse. |
-| 4 | **Boot load** | Routine = one default working-set load (`boot` / `pack=overlay`). Focus-only = `pulse`. Other packs are advanced. Inventory: [`../mcp/README.md`](../mcp/README.md). |
-| 5 | **Connect** | Prefer tools on the vault machine. Remote may draft; accept stays local. Mirrors are browse-only. |
-
-Formal names below decode those rules for implementers. **Do not teach the glossary as day-one speech.**
-
-**Quick plain → formal** (decode only): main note → Hub · “what’s true now” on a main note → Hub Now · short index → Vault Map · detail note → Leaf · task → Claim · you → Operator · draft for accept → Propose · ask first → Human-gate · tools won’t apply → Forbidden · working set → Active Overlay · open ≤2 after index → Map ≤2 · routine / high-stakes → Default / Elevated.
+**Goals in one line:** files are the record · durable edits are reviewable · context stays small · stop when the task is done.
 
 ---
 
-## Outcomes
+## Labels tools use (optional)
 
-| Outcome | Invariant |
-|---------|-----------|
-| Continuity | Files are source of truth; chat is not |
-| Reviewable durable writes | Draft → accept; ask first when irreversible; some writes tools refuse |
-| Small context | Work only inside a **working set**; expand only under a named task |
-| Clear stop | Done when / kill when for this task |
+Tool code and MCP need short stable labels so docs and implementations don’t drift. **You do not need this table to use the kit.** Plain speech above is enough for day one.
 
----
+| Tool label | Plain meaning |
+|------------|----------------|
+| Vault | notes under a root folder |
+| Map / short index | small list of main notes — not live status |
+| Hub / main note | home note for one project or area |
+| Leaf / detail note | deeper note under a main note |
+| Claim | this task / this turn’s work |
+| Operator | you |
+| Session Now / personal focus | optional personal “what I’m on” strip |
+| Hub Now | “what’s true now” on a main note |
+| Active Overlay / working set | the small set open for this task (not a second status home) |
+| Scratch | throwaway buffer |
+| Dual-home | same live fact written in two places — don’t |
+| Auto | safe micro-ops tools may do |
+| Propose | draft for accept |
+| Human-gate | ask first |
+| Forbidden | tools won’t apply |
+| Domain | `personal` or `business` only |
+| Attach / boot pack | how the agent connects and what thin slice it loads |
+| Map ≤2 | after the index, open at most two notes unless the task expands |
+| Typed links (optional) | controlled `rel` only: `owns` · `active_on` · `constrained_by` · `prefers` · `supersedes` |
 
-## Glossary (canonical)
+If you extend the kit, **define a new tool label in one place** (here or the MCP contract) so prompts don’t invent a second meaning. That is housekeeping, not a speech ideology.
 
-**One home for formal meanings.** Plain speech on faces. Link here; do not re-define.
+**Older aliases** (for implementers cleaning drift): Protocol-proceed → Auto · Human-required → ask first · “trust ladder” → write gate · Plane L → “what’s true now” on a main note · treating the working set as live status → don’t.
 
-### Must-know
-
-| Formal | Plain | Meaning |
-|--------|-------|---------|
-| **Vault** | notes / vault | Markdown tree under a root — source of truth |
-| **Law** | rules / this kit | This doc + write classes + loops + anti-goals |
-| **Vault Map** | short index / index | Intent router only — **not** live status |
-| **Hub** | main note | Living home for one endeavor (thin is complete) |
-| **Leaf** | detail note | Depth under a hub — open when the task names it |
-| **Claim** | task / this turn’s work | One named unit of work with a stop |
-| **Operator** | you / human | Accept / abort authority |
-| **Session Now** | personal focus | Optional personal operating strip (`## Active context` or equivalent) |
-| **Hub Now** | “what’s true now” (on a main note) | Endeavor live strip — hub `## Now` (or pack Live state) |
-| **Active Overlay** | working set | Sole **hot** material for this claim — derived, disposable, **not** a live-truth writer |
-| **Scratch** | scratch | Ephemeral buffer — overwrite-OK; not judgment |
-| **Dual-home** | same live fact in two places | **Forbidden** — one writer per live scope |
-| **Dual register** | scratch vs judgment | Reversible work vs gated durable truth (see Write classes) |
-| **Write class** | write gate | Auto · Propose · Human-gate · Forbidden |
-| **Auto** | safe auto | Reversible / protocol micro-ops — tools may proceed |
-| **Propose** | draft for accept | Agent drafts; human accepts before apply |
-| **Human-gate** | ask first | Irreversible or sensitive — ask before write |
-| **Forbidden** | tools won’t apply | Not “try carefully” |
-| **Domain** | personal / business | Frontmatter `personal` \| `business` only |
-| **Attach** | connect / MCP attach | Host load of thin boot views |
-| **Boot pack** | thin attach recipe | Named view over fixed paths — not a vault dump |
-| **Map ≤2** | open ≤2 | After the index, ≤2 linked notes unless the task expands the working set |
-
-### Load when the task needs them
-
-| Formal | Plain | Meaning |
-|--------|-------|---------|
-| **Edge / rel** | typed link | Controlled set: `owns` · `active_on` · `constrained_by` · `prefers` · `supersedes` |
-| **First contact** | first setup | Nothing tracked yet — [`START-GUIDE.md`](./START-GUIDE.md) · [`ENTRY.md`](./ENTRY.md) |
-| **Default / Elevated** | routine / high-stakes | Loop modes (exit-first; stakes-scaled) |
-
-### Superseded language (do not teach)
-
-| Old / wrong | Use instead |
-|-------------|-------------|
-| Ambient multi-step load “Session → Map → Hub → Me → Preferences → leaves” as the legal default path | **Compose working set (Active Overlay) first** |
-| Soft “prefer one home” for the same live fact | **Dual-home Forbidden** |
-| Plane L | Hub Now / “what’s true now” on a main note |
-| Protocol-proceed | **Auto** |
-| Human-required / Never silent | **Human-gate** |
-| “write ladder” / “trust ladder” as everyday talk | **write classes** / write gate |
-| Treating the working set as a second live status home | Hot reason ≠ live truth |
-
-Identity / prefs: durable Me and Preferences are ask-first. Class examples: [`WRITE-CLASSES.md`](./WRITE-CLASSES.md).
+Identity / prefs: durable Me and Preferences are ask-first. Examples: [`WRITE-CLASSES.md`](./WRITE-CLASSES.md).
 
 ---
 
@@ -110,12 +69,12 @@ Identity / prefs: durable Me and Preferences are ask-first. Class examples: [`WR
 | Personal | Root evergreen, daily, inbox | Default unless the task opens business |
 | Business | Business subtree only | Prefer two notes + a link over mixing domains in one note |
 
-## Dual register (frame)
+## Scratch vs durable notes
 
-| Register | Holds | Write stance |
-|----------|--------|--------------|
-| **Scratch / reversible** | Working buffers, hold-pen capture, protocol micro-ops | **Auto** when tool-safe |
-| **Judgment / live truth** | Evergreen, endeavor Now, personal focus priorities | **Propose** → accept · **Human-gate** when sensitive |
+| Kind | Holds | Write stance |
+|------|--------|--------------|
+| **Scratch / reversible** | Working buffers, hold-pen capture, safe micro-ops | tools may proceed when safe |
+| **Durable / live truth** | Evergreen, endeavor Now, personal focus priorities | draft → accept · ask first when sensitive |
 
 Examples and friction detail: [`WRITE-CLASSES.md`](./WRITE-CLASSES.md). Do not re-essay the class table here.
 
@@ -123,11 +82,11 @@ Examples and friction detail: [`WRITE-CLASSES.md`](./WRITE-CLASSES.md). Do not r
 
 ---
 
-## Critical path
+## What to load first
 
-1. This kit (rules + write gate + loops + out-of-scope) when structure or durable writes change  
-2. **Working set** for the claim (compose or load Active Overlay)  
-3. Index (Intent only) and endeavor Now **inside** that working set  
+1. This kit (rules + write gate) when structure or durable writes change  
+2. **Working set** for this task (compose or load the small open set)  
+3. Index and endeavor “what’s true now” **inside** that set  
 
 Keep the index as an index (not biographies). No new top-level vault folders without amending this shape.
 
@@ -150,7 +109,7 @@ Keep the index as an index (not biographies). No new top-level vault folders wit
 11. Do not reframe restricted topics to bypass sensitivity marks.  
 12. Research trails live in named detail notes; main note holds a short summary — not full research bodies.  
 
-**Superseded:** ambient multi-step browse as a parallel legal default. A fixed recipe may compose the default working set — that is not open vault browsing.
+**Old habit:** browse the whole tree. **Better:** open only a small working set for this task (a fixed recipe is fine — that is not open vault browsing).
 
 When MCP is available: **routine** = default working-set load (`boot` / `overlay`); **focus-only** = `pulse`. Full pack inventory: [`../mcp/README.md`](../mcp/README.md).
 
@@ -210,18 +169,18 @@ Declare thin status; offer leave-thin or bounded-fill. Prefer no silent expansio
 
 ---
 
-## Live surfaces
+## Where current status lives
 
-**Plain:** three jobs — personal focus · project “what’s true now” · short index (never live). Same live fact → one writer only.
+Three jobs — personal focus · project “what’s true now” · short index (never live status). Same live fact → one writer only.
 
-| Job (plain) | Formal kind | Sole writer of live truth | Not live |
-|-------------|-------------|---------------------------|----------|
+| Job | Tool label (optional) | Who updates live status | Not live |
+|-----|----------------------|-------------------------|----------|
 | **Personal focus** | Session Now | Active context strip (optional) | Index · chat · working set body |
 | **Project “what’s true now”** | Hub Now | Main-note `## Now` / pack Live | Index · personal focus · detail bodies · working set body |
-| **This turn’s hot set** | Active Overlay / working set | **None** (derived view only) | Must not dual-home live facts |
-| **Short index** | Vault Map | — | Intent router only — never live status |
+| **This turn’s hot set** | working set | **None** (derived view only) | Must not hold a second copy of live facts |
+| **Short index** | Map | — | Router only — never live status |
 
-**One live home:** the same live fact must not have two writers. Pointers over paste. Open detail notes when the task names them.
+**One place for a live fact.** Prefer pointers over paste. Open detail notes when the task names them.
 
 ---
 

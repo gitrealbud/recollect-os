@@ -1,7 +1,7 @@
 {
   "name": "recollect-os",
   "version": "0.3.7",
-  "description": "File-native judgment practice for any MCP-capable model — init, smoke, status (not a memory product)",
+  "description": "CLI and kit for markdown vaults: init, smoke, status — draft durable edits then accept (not a memory product)",
   "type": "module",
   "bin": {
     "recollect-os": "./dist/src/index.js"
@@ -37,7 +37,7 @@
     "note-taking",
     "vault",
     "file-native",
-    "judgment"
+    "markdown"
   ],
   "repository": {
     "type": "git",

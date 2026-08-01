@@ -1,9 +1,8 @@
 # recollect-os
 
-**File-native judgment law for human-in-the-loop agents** — local CLI + kit.
+Local **CLI + kit** for markdown vaults: init, smoke, status. Notes on disk; durable AI edits draft then you accept.
 
-Gives an AI a durable place to think with you—not a chat log to re-read, and not a black-box memory product.  
-Not the unrelated npm package `recollect` (browser DB).
+Not a black-box memory product. Not the unrelated npm package `recollect` (browser DB).
 
 Repo: [recollect-os](https://github.com/gitrealbud/recollect-os).
 

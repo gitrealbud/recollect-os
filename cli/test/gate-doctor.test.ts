@@ -171,7 +171,7 @@ test("doctor passes on private vault without docs kit spine", async () => {
   );
   const r = runDoctor({ root: dir });
   assert.equal(r.ok, true, r.lines.join("\n"));
-  assert.ok(r.lines.some((l) => l.includes("private vault law")));
+  assert.ok(r.lines.some((l) => l.includes("private vault rules")));
   assert.ok(!r.lines.some((l) => l.includes("docs/LAW.md missing")));
 });
 

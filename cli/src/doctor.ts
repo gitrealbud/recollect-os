@@ -63,17 +63,20 @@ export function runDoctor(opts: DoctorOptions): DoctorResult {
       }
     }
     const text = fs.readFileSync(kitLaw, "utf8");
-    if (!text.includes("## Glossary (canonical)")) {
-      fail(lines, "docs/LAW.md missing Formal·Plain glossary");
+    const hasLabels =
+      (text.includes("## Labels tools use") && text.includes("| Tool label | Plain meaning |")) ||
+      (text.includes("## Glossary") && text.includes("| Formal | Plain |"));
+    if (!hasLabels) {
+      fail(lines, "docs/LAW.md missing tool-label table (or Formal·Plain glossary)");
       ok = false;
-    } else pass(lines, "law glossary present (docs/LAW.md)");
+    } else pass(lines, "rules labels present (docs/LAW.md)");
   } else if (fs.existsSync(privateLaw)) {
     const text = fs.readFileSync(privateLaw, "utf8");
-    if (!text.includes("## Glossary (canonical)")) {
-      fail(lines, "RECOLLECT.md missing glossary");
+    if (!text.includes("## Glossary") && !text.includes("write class") && !text.includes("write gate")) {
+      fail(lines, "RECOLLECT.md missing rules glossary");
       ok = false;
     } else {
-      pass(lines, "private vault law present (RECOLLECT.md)");
+      pass(lines, "private vault rules present (RECOLLECT.md)");
     }
     info(lines, "kit docs/ spine not required for private vault");
   } else {

@@ -29,7 +29,7 @@ Prove it: [docs/DEMO.md](./docs/DEMO.md)
 2. **Load little** — short index, at most two notes  
 3. **Nothing permanent until you accept**
 
-Entry: [docs/ENTRY.md](./docs/ENTRY.md) · Install: [docs/START-GUIDE.md](./docs/START-GUIDE.md) · Rules: [docs/LAW.md](./docs/LAW.md) · Writes: [docs/WRITE-CLASSES.md](./docs/WRITE-CLASSES.md)
+Entry: [docs/ENTRY.md](./docs/ENTRY.md) · Install: [docs/START-GUIDE.md](./docs/START-GUIDE.md) · Rules: [docs/LAW.md](./docs/LAW.md) · Write gate: [docs/WRITE-CLASSES.md](./docs/WRITE-CLASSES.md)
 
 ---
 
@@ -40,7 +40,7 @@ Entry: [docs/ENTRY.md](./docs/ENTRY.md) · Install: [docs/START-GUIDE.md](./docs
 | Entry | [ENTRY](./docs/ENTRY.md) |
 | Install | [START-GUIDE](./docs/START-GUIDE.md) |
 | Attach | [ATTACH](./docs/ATTACH.md) · [examples/attach](./examples/attach/) |
-| Rules | [LAW](./docs/LAW.md) |
+| Rules (file still named LAW.md) | [LAW](./docs/LAW.md) |
 | Write gate | [WRITE-CLASSES](./docs/WRITE-CLASSES.md) |
 | Demo | [DEMO](./docs/DEMO.md) |
 | MCP tools | [mcp/README](./mcp/README.md) |

@@ -41,7 +41,13 @@ test("init creates vault and smoke passes", () => {
   assert.ok(fs.existsSync(path.join(dir, "vault", "Templates", "episode.md")));
   const smoke = runSmoke(dir);
   assert.equal(smoke.ok, true, smoke.lines.join("\n"));
-  assert.ok(smoke.lines.some((l) => l.includes("docs spine ok") && l.includes("glossary")));
+  assert.ok(
+    smoke.lines.some(
+      (l) =>
+        l.includes("docs spine ok") &&
+        (l.includes("rules labels") || l.includes("glossary"))
+    )
+  );
 });
 
 test("init refuses recreate without --rewire", () => {

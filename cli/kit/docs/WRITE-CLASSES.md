@@ -1,15 +1,15 @@
-# Write classes
+# Write gate
 
-**What this is for:** durable edits stay reviewable.
+**What this is for:** durable edits stay reviewable. Filename `WRITE-CLASSES.md` is historical.
 
-## Plain lead (mass 1 — writes)
+## Plain lead (writes)
 
-Three outcomes — teach these before the four class names:
+Three outcomes — teach these before the four tool names:
 
 | Outcome | Meaning |
 |---------|---------|
 | **Safe micro-ops** | Reversible housekeeping — tools may proceed without a click each time |
-| **Draft → accept** | Durable judgment is proposed; you accept before it is written |
+| **Draft → accept** | Durable note edits are proposed; you accept before they stick |
 | **Tools refuse** | Some paths never apply (not “try carefully”) |
 
 Day-one faces use only that plain speech. Formal names below are for tools and this kit. Glossary: [`LAW.md`](./LAW.md).
@@ -29,7 +29,7 @@ Day-one faces use only that plain speech. Formal names below are for tools and t
 
 **Chat → notes:** If you ask the agent to synthesize or remember for the system, it should **file a note** (often Inbox) and point you at the path — not only leave an essay in chat.
 
-**Propose is for durable judgment** — evergreen, “what’s true now,” business hubs, priority changes — where silent agent write is the failure mode. If a workflow feels too slow, **re-class** (Auto / Inbox hold) before abandoning the gate.
+**Propose is for durable note edits** — evergreen, “what’s true now,” business hubs, priority changes — where silent agent write is the failure mode. If a workflow feels too slow, **re-class** (Auto / Inbox hold) before abandoning the gate.
 
 High-volume *durable* spam still needs accept (or redesign so it is not durable). The gate is intentional.
 
@@ -38,7 +38,7 @@ High-volume *durable* spam still needs accept (or redesign so it is not durable)
 | **Auto** | tool-safe / reversible | Fill missing `created`; append today’s daily when asked; normalize required frontmatter; overwrite Scratch |
 | **Propose** | HITL draft | Inbox filing; promotions to evergreen; new business hubs; personal focus priority changes |
 | **Human-gate** | ask before write | Delete; bulk archive; domain flip; merges; cross-domain copies; public publish; durable **Me** / **Preferences** / identity edges |
-| **Forbidden** | tools won’t apply | Invent facts; dual-home the same live fact; `sensitivity: restricted` bodies; Secrets/Archive paths; free-string relationship labels; auto-sync private→public |
+| **Forbidden** | tools won’t apply | Invent facts; same live fact in two places; `sensitivity: restricted` bodies; Secrets/Archive paths; free-string relationship labels; auto-sync private→public |
 
 Proposal should name original `domain` + `sensitivity` — not a professional cover story.
 

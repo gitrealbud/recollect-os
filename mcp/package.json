@@ -1,7 +1,7 @@
 {
   "name": "recollect-os-mcp",
   "version": "0.4.5-overlay",
-  "description": "Stdio + experimental HTTP MCP for file-native judgment vaults — propose/apply gate (not a memory dump)",
+  "description": "Stdio + experimental HTTP MCP for markdown vaults — boot, read, draft/apply with human accept (not a memory dump)",
   "type": "module",
   "bin": {
     "recollect-os-mcp": "./dist/src/index.js",

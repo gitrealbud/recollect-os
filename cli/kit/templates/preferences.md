@@ -18,7 +18,7 @@ sensitivity: normal
 
 # Preferences
 
-How to work with the operator. Keep short. **Human-gate** for durable writes.
+How to work with the human. Keep short. **Ask first** before durable Preference edits.
 
 ## Interaction
 
