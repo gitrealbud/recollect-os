@@ -1,6 +1,6 @@
 # recollect-os-mcp
 
-Local **stdio** MCP for [Recollect](https://github.com/gitrealbud/recollect-os)-shaped vaults.
+Local **stdio** MCP for [Recollect](https://github.com/gitrealbud/recollect-main)-shaped vaults.
 
 **npm name:** `recollect-os-mcp` — *not* the unrelated npm package `recollect-mcp` (SQLite memory).  
 **Vault stays Markdown-only.** This package is an adapter: resolve paths, enforce policy, mediate writes.

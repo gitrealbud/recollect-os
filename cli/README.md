@@ -4,7 +4,7 @@ Local **CLI + kit** for markdown vaults: init, smoke, status. Notes on disk; dur
 
 Not a black-box memory product. Not the unrelated npm package `recollect` (browser DB).
 
-Repo: [recollect-os](https://github.com/gitrealbud/recollect-os).
+Repo: [recollect-main](https://github.com/gitrealbud/recollect-main).
 
 ## Start (one command)
 
@@ -17,7 +17,7 @@ npx -y recollect-os smoke --root ~/recollect
 npx -y recollect-os status --root ~/recollect
 ```
 
-Init convenience-wires **Cursor**. For Claude Desktop, VS Code, Windsurf, Zed, or any other **stdio MCP** host, paste the server block from the [repo README](https://github.com/gitrealbud/recollect-os#attach-any-mcp-capable-model) / [`mcp/README.md`](../mcp/README.md). Same vault. Same write gate. Model is interchangeable.
+Init convenience-wires **Cursor**. For Claude Desktop, VS Code, Windsurf, Zed, or any other **stdio MCP** host, paste the server block from the [repo README](https://github.com/gitrealbud/recollect-main#attach-any-mcp-capable-model) / [`mcp/README.md`](../mcp/README.md). Same vault. Same write gate. Model is interchangeable.
 
 **Windows:** if `npx` misses the bin:
 
