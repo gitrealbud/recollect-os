@@ -50,12 +50,13 @@ export function runSmoke(root: string, opts: SmokeOptions = {}): SmokeResult {
   }
   if (ok) {
     const law = fs.readFileSync(path.join(abs, "docs", "LAW.md"), "utf8");
-    // Tool-label table (preferred) or legacy Formal|Plain glossary
-    const hasLabels =
-      (law.includes("## Labels tools use") && law.includes("| Tool label | Plain meaning |")) ||
-      (law.includes("## Glossary") && law.includes("| Formal | Plain |"));
-    if (!hasLabels) {
-      fail("docs/LAW.md missing tool-label table (or Formal·Plain glossary)");
+    // Coherent plain rules (no dual-speech glossary required)
+    const hasRules =
+      law.includes("## What to do") &&
+      (law.includes("draft") || law.includes("Draft")) &&
+      law.includes("working set");
+    if (!hasRules) {
+      fail("docs/LAW.md missing plain rules (What to do / working set)");
     }
     const start = fs.readFileSync(path.join(abs, "docs", "START-GUIDE.md"), "utf8");
     if (!start.includes("ATTACH.md") && !start.includes("./ATTACH")) {
@@ -65,7 +66,7 @@ export function runSmoke(root: string, opts: SmokeOptions = {}): SmokeResult {
     const cursorIdx = start.indexOf("**Cursor**");
     if (anyIdx < 0) fail("docs/START-GUIDE.md missing Any MCP host row");
     else if (cursorIdx >= 0 && cursorIdx < anyIdx) fail("START host table lists Cursor before Any MCP host");
-    pass(`docs spine ok · ${spine.length} files · rules labels · host-first START`);
+    pass(`docs spine ok · ${spine.length} files · plain rules · host-first START`);
   }
 
   process.env.RECOLLECT_ROOT = abs;

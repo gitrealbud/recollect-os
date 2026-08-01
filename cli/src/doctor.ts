@@ -63,17 +63,23 @@ export function runDoctor(opts: DoctorOptions): DoctorResult {
       }
     }
     const text = fs.readFileSync(kitLaw, "utf8");
-    const hasLabels =
-      (text.includes("## Labels tools use") && text.includes("| Tool label | Plain meaning |")) ||
-      (text.includes("## Glossary") && text.includes("| Formal | Plain |"));
-    if (!hasLabels) {
-      fail(lines, "docs/LAW.md missing tool-label table (or Formal·Plain glossary)");
+    const hasRules =
+      text.includes("## What to do") &&
+      (text.includes("draft") || text.includes("Draft")) &&
+      text.includes("working set");
+    if (!hasRules) {
+      fail(lines, "docs/LAW.md missing plain rules (What to do / working set)");
       ok = false;
-    } else pass(lines, "rules labels present (docs/LAW.md)");
+    } else pass(lines, "plain rules present (docs/LAW.md)");
   } else if (fs.existsSync(privateLaw)) {
     const text = fs.readFileSync(privateLaw, "utf8");
-    if (!text.includes("## Glossary") && !text.includes("write class") && !text.includes("write gate")) {
-      fail(lines, "RECOLLECT.md missing rules glossary");
+    // Private vault rules file — any of: modern plain lede, write gate, or legacy glossary
+    const hasPrivateRules =
+      /write gate|write class|## Active context|## Glossary|draft.*accept|notes on disk/i.test(
+        text
+      );
+    if (!hasPrivateRules) {
+      fail(lines, "RECOLLECT.md missing vault rules");
       ok = false;
     } else {
       pass(lines, "private vault rules present (RECOLLECT.md)");

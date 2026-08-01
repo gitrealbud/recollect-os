@@ -163,7 +163,7 @@ test("doctor passes on private vault without docs kit spine", async () => {
   fs.mkdirSync(path.join(dir, "vault"), { recursive: true });
   fs.writeFileSync(
     path.join(dir, "RECOLLECT.md"),
-    `# Law\n\n## Glossary (canonical)\n\n| Formal | Plain |\n|--------|-------|\n| Hub Now | Now section |\n\n## Active context\n\n- test\n`
+    `# Rules\n\nNotes on disk. Draft then accept.\n\n## Active context\n\n- test\n`
   );
   fs.writeFileSync(
     path.join(dir, "vault", "Me.md"),

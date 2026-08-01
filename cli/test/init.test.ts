@@ -45,7 +45,7 @@ test("init creates vault and smoke passes", () => {
     smoke.lines.some(
       (l) =>
         l.includes("docs spine ok") &&
-        (l.includes("rules labels") || l.includes("glossary"))
+        (l.includes("plain rules") || l.includes("rules labels") || l.includes("glossary"))
     )
   );
 });
