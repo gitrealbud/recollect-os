@@ -1,0 +1,55 @@
+{
+  "name": "recollect-os",
+  "version": "0.3.7",
+  "description": "File-native judgment practice for any MCP-capable model — init, smoke, status (not a memory product)",
+  "type": "module",
+  "bin": {
+    "recollect-os": "./dist/src/index.js"
+  },
+  "files": [
+    "dist",
+    "kit",
+    "README.md"
+  ],
+  "scripts": {
+    "sync-kit": "node scripts/sync-kit.mjs",
+    "taxonomy:ban": "node ../scripts/taxonomy-ban.mjs",
+    "build": "npm run sync-kit && tsc",
+    "test": "npm run build && node --test \"dist/test/**/*.test.js\"",
+    "prepublishOnly": "npm run build"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "recollect-os",
+    "agents",
+    "ai-agents",
+    "llm",
+    "human-in-the-loop",
+    "mcp",
+    "model-context-protocol",
+    "markdown",
+    "local-first",
+    "personal-knowledge-management",
+    "pkm",
+    "agent-memory",
+    "note-taking",
+    "vault",
+    "file-native",
+    "judgment"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gitrealbud/recollect-os.git",
+    "directory": "cli"
+  },
+  "dependencies": {
+    "recollect-os-mcp": "file:../mcp"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.0",
+    "typescript": "^5.8.0"
+  },
+  "license": "MIT"
+}

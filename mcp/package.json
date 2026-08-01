@@ -1,0 +1,75 @@
+{
+  "name": "recollect-os-mcp",
+  "version": "0.4.5-overlay",
+  "description": "Stdio + experimental HTTP MCP for file-native judgment vaults — propose/apply gate (not a memory dump)",
+  "type": "module",
+  "bin": {
+    "recollect-os-mcp": "./dist/src/index.js",
+    "recollect-os-mcp-http": "./dist/src/http-server.js",
+    "recollect-os-mcp-mint": "./dist/src/mint-token.js"
+  },
+  "main": "./dist/src/index.js",
+  "exports": {
+    ".": "./dist/src/index.js",
+    "./package.json": "./package.json",
+    "./code-api": "./dist/src/code-api.js",
+    "./agent-frame-seed": "./dist/src/agent-frame-seed.js",
+    "./boot": "./dist/src/tools/boot.js",
+    "./root": "./dist/src/root.js",
+    "./status": "./dist/src/tools/status.js",
+    "./propose_write": "./dist/src/tools/propose_write.js",
+    "./apply_write": "./dist/src/tools/apply_write.js",
+    "./proposals": "./dist/src/proposals.js",
+    "./audit": "./dist/src/audit.js",
+    "./errors": "./dist/src/errors.js",
+    "./budgets": "./dist/src/budgets.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "scripts"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/src/index.js",
+    "start:http": "node dist/src/http-server.js",
+    "mint": "node dist/src/mint-token.js",
+    "smoke:http": "node scripts/smoke-http.mjs",
+    "example:code-side": "node scripts/example-code-side.mjs",
+    "test": "tsc && node --test dist/test/**/*.test.js",
+    "prepublishOnly": "npm run build"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "recollect-os",
+    "agents",
+    "ai-agents",
+    "llm",
+    "markdown",
+    "agent-memory",
+    "human-in-the-loop",
+    "local-first",
+    "vault",
+    "file-native"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gitrealbud/recollect-os.git",
+    "directory": "mcp"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "jose": "^6.2.5",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^22.15.0",
+    "typescript": "^5.8.0"
+  }
+}
